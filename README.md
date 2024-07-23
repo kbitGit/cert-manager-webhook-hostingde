@@ -81,6 +81,9 @@ type: Opaque
 data:
   api-key: your-key-base64-encoded
 ```
+Beware the API token does not work with the webhook, if it contains a backslash. The Go Json Marshal escapes the backslash, causing the API token to be invalid. 
+
+E.g. A sequence in the token of '\\\*' gets converted to '\\\\\*'.
 
 ### Create a certificate
 
